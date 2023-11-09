@@ -58,11 +58,10 @@ RUN mkdir ~/Catch2-3.3.2/build && cd ~/Catch2-3.3.2/build && cmake ../ -DCMAKE_I
 
 # Install numpy in the python environments, use the oldest version that has a manylinux wheel for each environment
 # NOTE: this is using the oldest semimajor version and ignoring the minor version, I don't know if the minor version affects ABI
-RUN /opt/python/cp36-cp36m/bin/pip install numpy==1.16.6
-RUN /opt/python/cp37-cp37m/bin/pip install numpy==1.16.6
 RUN /opt/python/cp38-cp38/bin/pip install numpy==1.17.5
 RUN /opt/python/cp39-cp39/bin/pip install numpy==1.19.5
 RUN /opt/python/cp310-cp310/bin/pip install numpy==1.21.4
 RUN /opt/python/cp311-cp311/bin/pip install numpy==1.23.5
+RUN /opt/python/cp312-cp312/bin/pip install numpy==1.26.0
 
 
