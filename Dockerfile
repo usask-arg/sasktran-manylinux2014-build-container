@@ -1,4 +1,4 @@
-from quay.io/pypa/manylinux2014_x86_64:2023-04-16-157f52a
+from quay.io/pypa/manylinux2014_x86_64:2023-11-07-de0c444
 
 RUN yum -y update && yum -y install wget openssh openssh-clients
 
