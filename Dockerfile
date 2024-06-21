@@ -56,12 +56,9 @@ RUN mkdir ~/yaml-cpp-yaml-cpp-0.7.0/build && cd ~/yaml-cpp-yaml-cpp-0.7.0/build 
 RUN cd ~ && wget -nv https://github.com/catchorg/Catch2/archive/refs/tags/v3.3.2.tar.gz && tar xf v3.3.2.tar.gz 
 RUN mkdir ~/Catch2-3.3.2/build && cd ~/Catch2-3.3.2/build && cmake ../ -DCMAKE_INSTALL_PREFIX=$INSTALLPREFIX -DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=true && cmake --build . && cmake --install . > /dev/null 2>&1
 
-# Install numpy in the python environments, use the oldest version that has a manylinux wheel for each environment
-# NOTE: this is using the oldest semimajor version and ignoring the minor version, I don't know if the minor version affects ABI
-RUN /opt/python/cp38-cp38/bin/pip install numpy==1.17.5
-RUN /opt/python/cp39-cp39/bin/pip install numpy==1.19.5
-RUN /opt/python/cp310-cp310/bin/pip install numpy==1.21.4
-RUN /opt/python/cp311-cp311/bin/pip install numpy==1.23.5
-RUN /opt/python/cp312-cp312/bin/pip install numpy==1.26.0
+# Install numpy in the python environments, build against numpy 2.0.0
+RUN /opt/python/cp310-cp310/bin/pip install numpy==2.0.0
+RUN /opt/python/cp311-cp311/bin/pip install numpy==2.0.0
+RUN /opt/python/cp312-cp312/bin/pip install numpy==2.0.0
 
 
