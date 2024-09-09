@@ -1,4 +1,4 @@
-from quay.io/pypa/manylinux2014_x86_64:2023-11-07-de0c444
+from quay.io/pypa/manylinux2014_x86_64:2024.09.09-0
 
 RUN yum -y update && yum -y install wget openssh openssh-clients
 
@@ -60,5 +60,4 @@ RUN mkdir ~/Catch2-3.3.2/build && cd ~/Catch2-3.3.2/build && cmake ../ -DCMAKE_I
 RUN /opt/python/cp310-cp310/bin/pip install numpy==2.0.0
 RUN /opt/python/cp311-cp311/bin/pip install numpy==2.0.0
 RUN /opt/python/cp312-cp312/bin/pip install numpy==2.0.0
-
-
+RUN /opt/python/cp313-cp313/bin/pip install numpy==2.0.0
